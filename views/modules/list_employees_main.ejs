@@ -1,0 +1,38 @@
+<div class="content-container">
+    <h2>Список военнослужащих:</h2>
+    <div class="btn-add" id="btn-add">Добавить нового военнослужащего</div>
+    <div id="mainTableContainer">
+        <table id="mainTable" class="employees-table">
+            <tr class="header-table">
+                <th onclick="window.location.href = '/list_employees?sortParam=id';">№</th>
+                <th onclick="window.location.href = '/list_employees?sortParam=name';">ФИО</th>
+                <th onclick="window.location.href = '/list_employees?sortParam=post';">Должность</th>
+                <th onclick="window.location.href = '/list_employees?sortParam=rank';">Звание</th>
+                <th onclick="window.location.href = '/list_employees?sortParam=unit';">Подразделение</th>
+            </tr>
+            <% employeesList.forEach((employee, i) => { %>
+                <tr class="tr-container" id="<%= employee.id %>">
+                    <td class="td-info td-id number-<%= i + 1%>">
+                        <%= i + 1%>
+                    </td>
+                    <td class="td-info td-name">
+                        <%= employee.name %>
+                    </td>
+                    <td class="td-info td-post">
+                        <%= employee.post %>
+                    </td>
+                    <td class="td-info td-rank">
+                        <%= employee.rank %>
+                    </td>
+                    <td class="td-info td-unit">
+                        <%= employee.unit %>
+                    </td>
+                    <td class="editDelete-container">
+                        <div class="btn-edit" onclick="btnEditFunction(this)"> Редактировать</div>
+                        <div class="btn-delete" onclick="btnDeleteFunction(this)"> Удалить</div>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+    </div>
+</div>

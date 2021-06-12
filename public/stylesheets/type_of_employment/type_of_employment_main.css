@@ -1,0 +1,65 @@
+.content-container {
+    margin-left: 4vw;
+}
+h2 {
+    margin: 2vh 0vh;
+}
+table {
+    font-family: "AsketNarrowThin";
+    font-size: 14px;
+    text-align: center;
+}
+th {
+    height: 50px;
+    border-radius: 2px;
+    border: 1px solid rgb(137, 133, 133);
+    padding: 0px 10px;
+    
+}
+
+.td-info {
+    background: #32353a;
+    color: rgb(231, 228, 228);
+    padding: 10px 20px;
+    border-radius: 2px;
+    border: 1px solid rgb(137, 133, 133);
+    text-align: left;
+}
+.editDelete-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 19vw;
+    padding: 0;
+}
+
+.th-btn-add, .td-container-btn-edit, .td-container-btn-delete {
+    border: none;
+}
+
+.btn-add, .btn-edit, .btn-delete, .btn-save, .btn-cancel {
+    font-family: "AsketNarrowThin";
+    margin: 10px;
+    background-color: rgb(57, 66, 76); /* Blue background */
+    color: rgb(231, 228, 228);
+    border-radius: 2px;
+    padding: 5px;
+}
+.btn-add {
+    margin: 3vh 0vh;
+    width: 260px;
+}
+.btn-edit:before {
+    content: "\270E";
+}
+.btn-delete:before {
+    content: "\2716";
+}
+.btn-add:before {
+    content: "\271A";
+}
+.btn-add:hover, .btn-edit:hover, .btn-delete:hover, .btn-save:hover, .btn-cancel:hover  {
+    background-color: rgb(92, 98, 108);
+    cursor: pointer;
+}

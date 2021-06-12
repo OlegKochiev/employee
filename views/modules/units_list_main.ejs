@@ -1,0 +1,28 @@
+<div class="content-container">
+    <h2>Список подразделений:</h2>
+    <div id="mainTableContainer">
+        <div class="add-unit-container">
+            <input type="text" class="unit-input">
+            <div class="btn-add" id="btn-add" onclick="addNewUnit(this)">Добавить новое подразделение</div>
+        </div>
+        <table id="mainTable" class="employees-table">
+            <tr class="header-table">
+                <th>№</th>
+                <th>Подразделение</th>
+            </tr>
+            <% unitsList.forEach((unit, i) => { %>
+                <tr class="tr-container" id="<%= unit.id %>">
+                    <td class="td-info td-id number-<%= i + 1%>">
+                        <%= i + 1%>
+                    </td>
+                    <td class="td-info td-name">
+                        <%= unit.unit_name %>
+                    </td>
+                    <td class="editDelete-container">
+                        <div class="btn-delete" onclick="deleteUnit(this)"> Удалить</div>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+    </div>
+</div>

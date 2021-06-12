@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'AsketNarrowThin';
+    src: url('../fonts/AsketNarrowThin.eot');
+    src: url('../fonts/AsketNarrowThin.eot?iefix') format('eot'),
+         url('../fonts/AsketNarrowThin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AsketNarrowThin.ttf') format('truetype'),
+         url('../fonts/AsketNarrowThin.woff2') format('woff2'), 
+         url('../fonts/AsketNarrowThin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CaptureSmallz';
+    src: url('../fonts/CaptureSmallz.eot');
+    src: url('../fonts/CaptureSmallz.eot?iefix') format('eot'),
+         url('../fonts/CaptureSmallz.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/CaptureSmallz.ttf') format('truetype'),
+         url('../fonts/CaptureSmallz.woff2') format('woff2'), 
+         url('../fonts/CaptureSmallz.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html {
+    color: #bfc2cc;
+    font-family: 'AsketNarrowThin';
+}
+
+.header-logo {
+    font-family: 'CaptureSmallz';
+    font-size: 20px;
+}
+
+.icon > p {
+    font-size: 17px;
+    margin-top: 5%;
+}
+.red {
+    color: rgb(154, 0, 0);
+}
+

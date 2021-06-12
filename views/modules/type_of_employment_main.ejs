@@ -1,0 +1,63 @@
+<%let currentDate = new Date()%>
+<div class="content-container">
+    <h2>РАСХОД личного состава на <%= currentDate.getDate() + " - " + (currentDate.getDate() + 1) + " число текущего месяца:" %></h2>
+    <div id="mainTableContainer">
+        <table id="mainTable" class="employees-table">
+            <tr class="header-table">
+                <th>№</th>
+                <th>ФИО</th>
+                <th>Звание</th>
+                <th>Подразделение</th>
+                <th>Учет</th>
+                <th colspan="2"> Период ( с .. по ..) </th>
+            </tr>
+                <%
+                employeesList.forEach((employee, i)=> { %>
+                    <tr class="tr-container" id="<%= employee.id%>">
+                            <td class="td-info number_<%= i%>">
+                                <%= i + 1%>
+                            </td>
+                            <td class="td-info td-name<%= employee.name%>">
+                                <%= employee.name %>
+                            </td>
+                            <td class="td-info td-rank<%= employee.rank%>">
+                                <%= employee.rank %>
+                            </td>
+                            <td class="td-info td-unit<%= employee.unit%>">
+                                <%= employee.unit %>
+                            </td>                            
+                            <td class="td-info employment-type">
+                                <select class="type-of-employment-select" onchange="changeSelectTOE(this)">
+                                    <option disabled <% if(employee.employment_type == ""){%>
+                                            <%= "selected"%>
+                                        <%}%> label="Выберите вариант"></option>
+                                    <option value="На лицо" label="На лицо" <% if(employee.employment_type == "На лицо"){%>
+                                            <%= "selected"%>
+                                        <%}%> ></option>
+                                    <option value="Наряд" label="Наряд" <% if(employee.employment_type == "Наряд"){%>
+                                            <%= "selected"%>
+                                        <%}%> ></option>
+                                    <option value="Болен" label="Болен" <% if(employee.employment_type == "Болен"){%>
+                                            <%= "selected"%>
+                                        <%}%> ></option>
+                                    <option value="Отпуск" label="Отпуск" <% if(employee.employment_type == "Отпуск"){%>
+                                            <%= "selected"%>
+                                        <%}%> ></option>
+                                    <option value="Командировка" label="Командировка"<% if(employee.employment_type == "Командировка"){%>
+                                            <%= "selected"%>
+                                        <%}%> ></option>
+                                </select>
+                            </td>
+                            <td class="td-info">
+                                <input type="date" class="interval-start datetime-input-start" value="<%= employee.time_interval_start%>">
+                            </td>
+                            <td class="td-info">
+                                <input type="date" class="interval-end datetime-input-end" value="<%= employee.time_interval_end%>">
+                            </td>
+                    </tr>
+                    <% }) %>
+                    
+        </table>
+        <div id="btn_save_TOE" class="btn-add" > Сохранить расход личного состава </div>
+    </div>
+</div>

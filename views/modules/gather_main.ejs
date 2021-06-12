@@ -1,0 +1,43 @@
+<%let currentDate = new Date()%>
+<div class="content-container">
+    <h2>Команда СБОР на <%= currentDate.getDate() + " - " + (currentDate.getDate() + 1) + " число текущего месяца:" %></h2>
+    <div class="btn-add" id="btn-save" onclick="printGather()">Распечатать список прибытия лиц</div>
+    <div class="btn-clear" id="btn-clear" onclick="clearGatherTime()">Очистить время прибытия лиц</div>
+    <div id="mainTableContainer">
+        <table id="mainTable" class="employees-table">
+            <tr class="header-table">
+                <th class="sort-link" onclick="window.location.href = '/gather?sortParam=id';">№</th>
+                <th class="sort-link" onclick="window.location.href = '/gather?sortParam=name';">ФИО</th>
+                <th class="sort-link" onclick="window.location.href = '/gather?sortParam=rank';">Звание</th>
+                <th class="sort-link" onclick="window.location.href = '/gather?sortParam=unit';">Подразделение</th>
+                <th class="sort-link" onclick="window.location.href = '/gather?sortParam=gather_time';">Отметка о прибытии и время</th>
+                <th class="sort-link" onclick="window.location.href = '/gather?sortParam=employment_type';">Примечание</th>
+            </tr>
+                <% gatherList.forEach((employee, i)=> { %>
+                    <tr class="tr-container" id="<%= employee.id%>">
+                        <td class="td-info">
+                            <%= i + 1%> 
+                        </td>
+                        <td class="td-info td-name <%= employee.name%>">
+                            <%= employee.name %>
+                        </td>
+                        <td class="td-info td-rank <%= employee.rank%>">
+                            <%= employee.rank %>
+                        </td>
+                        <td class="td-info td-unit <%= employee.unit%>">
+                            <%= employee.unit %>
+                        </td>    
+                        <td class="td-info td-checkTime-container">
+                            <div class="time-container-wrapper">
+                                <input type="time" class="time-datetime-input" value="<%= employee.gather_time%>">
+                                <input type="checkbox" class="time-checkbox-input" onclick="setDatetime(this)">
+                            </div>
+                        </td>
+                        <td class="td-info td-unit <%= employee.employment_type%>">
+                            <%= employee.employment_type %>
+                        </td>  
+                    </tr>
+                    <% }) %>
+        </table>
+    </div>
+</div>

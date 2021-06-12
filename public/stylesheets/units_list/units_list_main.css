@@ -1,0 +1,14 @@
+.add-unit-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.add-unit-container > .unit-input{
+    height: 4vh;
+    width: 13vw;
+    padding-left: 5px;
+    margin-right: 10px;
+}
+.td-name {
+    width: 10vw;
+}

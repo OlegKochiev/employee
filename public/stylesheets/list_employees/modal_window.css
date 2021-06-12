@@ -1,0 +1,83 @@
+h2 {
+    width: 100%;
+  }
+  .item-fio, .item-post, .item-unit, .item-rank {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .input-fio, .input-post, .select-unit, .select-rank {
+    background-color: #32353a;
+    border-radius: 2px;
+    border: 1px solid rgb(137, 133, 133);
+    color: rgb(231, 228, 228);
+    width: 280px;
+    height: 30px;
+    margin: 8px;
+    padding: 5px 0px;
+    outline: 0;
+    text-align: center;
+  }
+  .popup {
+    color: rgb(231, 228, 228);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease;
+    display: none;
+  }
+  .popup-open {
+    display: block;
+  }
+  .popup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    max-width: 750px;
+    width: 100%;
+  }
+  .popup-wrapper {
+    background-color: #32353a;
+    border-radius: 5px;
+    padding: 20px 20px 20px 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    font-family: 'AsketNarrowThin';
+  }
+  .input-profileimg-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .input-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .profileimg-container > img {
+    width: 300px;
+    margin-right: 50px;
+    margin-top: 20px;
+  }
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

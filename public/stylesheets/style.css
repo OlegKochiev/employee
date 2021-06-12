@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-color: #32353a;
+    height: 98%;
+    width: 100%;
+}

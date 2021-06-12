@@ -1,0 +1,58 @@
+<div class="popup" id="popup">
+    <div class="popup-container ">
+        <div class="popup-wrapper">
+            <h2>
+                Заполните / отредактируйте сведения о военнослужащем:
+            </h2>
+            <hr class="hr-line-top">
+            <br>
+            <div class="input-profileimg-container">
+                <form class="input-container">
+                    <div class="item-fio">
+                        <label for="fio">Введите ФИО:</label>
+                        <input id="popupFio" class="input-fio" name="fio" type="text" placeholder="ФИО">
+                    </div>
+                    <div class="item-post">
+                        <label for="post">Введите должность:</label>
+                        <input id="popupPost" class="input-post" name="post" type="text" placeholder="Должность">
+                    </div>
+                    <div class="item-rank">
+                        <label for="rank">Звание:</label>
+                        <select id="popupRank" class="select-rank">
+                            <option>Ряд.</option>
+                            <option>Ефр.</option>
+                            <option>Мл. с-т</option>
+                            <option>С-т</option>
+                            <option>Ст. с-т</option>
+                            <option>Стар-на</option>
+                            <option>Пр-к</option>
+                            <option>Ст. пр-к</option>
+                            <option>Л-т</option>
+                            <option>Ст. л-т</option>
+                            <option>К-н</option>
+                            <option>М-р</option>
+                            <option>П/П-к</option>
+                            <option>П-к</option>
+                        </select>
+                    </div>
+                    <div class="item-unit">
+                        <label for="unit">Подразделение:</label>
+                        <select id="popupUnit" class="select-unit">
+                            <% unitsList.forEach((unit) => { %>
+                                <option id="<%= unit.id%>"> <%= unit.unit_name %> </option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <input id="popupHidden" type="hidden" value="">
+                    <div class="btn-container">
+                        <div id="btn-save" class="btn-save">Сохранить</div>
+                        <div id="btn-cancel" class="btn-cancel">Отмена</div>
+                    </div>
+                </form>
+                <div class="profileimg-container">
+                    <img src="/images/profile.png" alt="Profile">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
