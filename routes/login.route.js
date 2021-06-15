@@ -12,7 +12,7 @@ router.route('/login')
             title: "Авторизация"
         });
     })
-    .post(jsonParser, async (req, res, next) => {
+    /*.post(jsonParser, async (req, res, next) => {
         const usernameVerify = await User.checkUserName(req.body.username);
         const passwordVerify = await User.checkUserPassword(req.body.password);
         if (usernameVerify && passwordVerify) {
@@ -30,6 +30,6 @@ router.route('/login')
         } else {
             res.redirect('/login');
         }
-    });
+    });*/
 
 module.exports = router;

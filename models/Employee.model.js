@@ -11,7 +11,7 @@ const Employee = function(employee) {
 Employee.addEmployee = async (newEmployee) => {
 	try {
 		const connection = await mysql.createConnection(config);
-		const [rows, fields] = await connection.execute("INSERT INTO `employees` (`name`,`post`,`rank`,`unit`) VALUES (?, ?, ?, ?);", newEmployee);
+		const [rows, fields] = await connection.execute("INSERT INTO `employees` (`name`,`post`,`rank`,`unit`, `gather_time`) VALUES (?, ?, ?, ?, '');", newEmployee);
 		connection.end();
 		return rows.insertId;
 	} catch (error) {
@@ -106,7 +106,7 @@ Employee.updateGatherInfo = async (employeeData) => {
 Employee.getUnitsList = async () => {
 	try {
 		const connection = await mysql.createConnection(config);
-		const [rows, fields] = await connection.execute("select `id`, `unit_name` from `units`");
+		const [rows, fields] = await connection.execute("SELECT `id`, `unit_name` FROM `units`");
 		connection.end();
 		return rows;
 	} catch (error) {
@@ -124,16 +124,40 @@ Employee.addUnit = async (unitName) => {
 	}
 }
 Employee.deleteUnit = async (unitID) => {
-	
 	try {
 		const connection = await mysql.createConnection(config);
 		const [rows, fields] = await connection.execute("DELETE FROM `units` WHERE `id` = ?", [unitID]);
 		connection.end();
 		return true;
 	} catch (error) {
-		console.log("Error in Employee.getUnitsList in model: ", error);
+		console.log("Error in Employee.deleteUnit in model: ", error);
 	}
 }
-
+Employee.getEmploymentCount = async (employmentType) => {
+	try {
+		const connection = await mysql.createConnection(config);
+		const [rows, fields] = await connection.execute("SELECT COUNT(*) FROM `employees` WHERE `employment_type`=?", [employmentType]);
+		connection.end();
+		return rows[0]['COUNT(*)'];
+	} catch (error) {
+		console.log("Error in Employee.getEmploymentCount in model: ", error);
+	}
+}
+Employee.getGatherCount = async (comeCheck) => {
+	try {
+		const connection = await mysql.createConnection(config);
+		if (comeCheck) {
+			const [rows, fields] = await connection.execute("SELECT COUNT(*) FROM `employees` WHERE `employment_type`='На лицо' AND `gather_time`!=''");
+			connection.end();
+			return rows[0]['COUNT(*)'];
+		} else {
+			const [rows, fields] = await connection.execute("SELECT COUNT(*) FROM `employees` WHERE `employment_type`='На лицо' AND `gather_time`=''");
+			connection.end();
+			return rows[0]['COUNT(*)'];
+		}
+	} catch (error) {
+		console.log("Error in Employee.getGatherCount in model: ", error);
+	}
+}
 
 module.exports = Employee;

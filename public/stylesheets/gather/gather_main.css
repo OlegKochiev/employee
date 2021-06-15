@@ -4,6 +4,44 @@
 h2 {
     margin: 2vh 0vh;
 }
+.btn_statistic_search-container {
+    display: flex;
+    flex-direction: row;
+}
+.btn_statistic-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 15vw;
+    margin: 2vw;
+}
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    max-width: 15vw;
+    margin: 2vw;
+}
+.search-text {
+    margin-top: 2vw;
+}
+.search-input {
+    width: 15vw;
+    height: 5vh;
+    border-radius: 7px;
+}
+.statistic-text {
+    margin-right: 10vw;
+}
+.elem-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: space-between;
+}
 table {
     font-family: "AsketNarrowThin";
     font-size: 20px;

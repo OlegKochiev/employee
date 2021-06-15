@@ -7,7 +7,7 @@ router.route('/')
 	.get((req, res, next) => {
 		console.log(req.cookies.authorization);
 		console.log(tokenKey);
-		if (req.cookies.authorization) {
+		/*if (req.cookies.authorization) {
 			jwt.verify(
 				req.cookies.authorization.token.split(' ')[1],
 				tokenKey,
@@ -22,8 +22,12 @@ router.route('/')
 				title: "Домашняя страница"
 			});
 		}
-		else 
+		else {
 			res.redirect('/login');
+		}*/
+		res.render('home', {
+			title: "Домашняя страница"
+		});
 	})
 module.exports = router;
 

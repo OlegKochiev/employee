@@ -1,8 +1,64 @@
 <%let currentDate = new Date()%>
 <div class="content-container">
     <h2>Команда СБОР на <%= currentDate.getDate() + " - " + (currentDate.getDate() + 1) + " число текущего месяца:" %></h2>
-    <div class="btn-add" id="btn-save" onclick="printGather()">Распечатать список прибытия лиц</div>
-    <div class="btn-clear" id="btn-clear" onclick="clearGatherTime()">Очистить время прибытия лиц</div>
+    <div class="btn_statistic_search-container">
+        <div class="btn_statistic-container">
+            <div class="btn-container">
+                <div class="btn-add" id="btn-save" onclick="printGather()">Распечатать список прибытия лиц</div>
+                <div class="btn-clear" id="btn-clear" onclick="clearGatherTime()">Очистить время прибытия лиц</div>
+            </div>
+            <div class="statistic-container">
+                <h3 class="statistic-text">Статистика:</h3>
+                <div class="elem-container">
+                    <h5 class="onface statistic-element">На лицо:   </h5>
+                    <span>
+                        <%= employmentCount.onfaceCount %>
+                    </span>
+                </div>
+                <div class="elem-container">
+                    <h5 class="watch statistic-element">В наряде:   </h5>
+                    <span>
+                        <%= employmentCount.watchCount %>
+                    </span>
+                </div>
+                <div class="elem-container">
+                    <h5 class="patient statistic-element">Больных:   </h5>
+                    <span>
+                        <%= employmentCount.patientCount %>
+                    </span>
+                </div>
+                <div class="elem-container">
+                    <h5 class="holiday statistic-element">Отпуск:   </h5>
+                    <span>
+                        <%= employmentCount.holidayCount %>
+                    </span>
+                </div>
+                <div class="elem-container">
+                    <h5 class="mission statistic-element">Командировка:   </h5>
+                    <span>
+                        <%= employmentCount.missionCount %>
+                    </span>
+                </div>
+                <hr class="hr-line-top">
+                <div class="elem-container">
+                    <h5 class="come statistic-element">Отметились:   </h5>
+                    <span>
+                        <%= employmentCount.come %>
+                    </span>
+                </div>
+                <div class="elem-container">
+                    <h5 class="no-come statistic-element">Не отметились:   </h5>
+                    <span>
+                        <%= employmentCount.noCome %>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="search-container">
+            <h4 class="search-text">Введите фамилию военнослужащего для поиска:</h4>
+            <input class="search-input" type="text" name="search_input" id="search_input" placeholder="Введите данные" onkeyup="findEmployee(this)">
+        </div>
+    </div>
     <div id="mainTableContainer">
         <table id="mainTable" class="employees-table">
             <tr class="header-table">
