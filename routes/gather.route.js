@@ -14,7 +14,6 @@ router.route('/gather')
             come: await Employee.getGatherCount(true),
             noCome: await Employee.getGatherCount(false)
         }
-        console.log()
         res.render('gather', {
             title: "Команда СБОР",
             gatherList: await Employee.getGatherList(req.query.sortParam),

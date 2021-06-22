@@ -40,7 +40,7 @@ h1{
 	border-bottom-right-radius: 8px;
 	border-bottom-left-radius: 8px;
 }
-#signin  input[type="text"], #signin  input[type="password"], #signin button[type="submit"]{
+#signin  input[type="text"], #signin  input[type="password"], #signin button{
 	background: rgb(28, 30, 33);
 	box-shadow: inset -100px -100px 0 rgb(28, 30, 33); /*Prevent yellow autofill color*/
 	color: rgb(52, 56, 61);
@@ -59,7 +59,7 @@ h1{
 #signin  input[type="text"]:focus, #signin  input[type="password"]:focus{
 	color: rgb(255, 255, 255);
 }
-#signin button[type="submit"]{
+#signin button {
 	display: block;
 	position: absolute;
 	width: 60px;
@@ -77,12 +77,12 @@ h1{
 	padding-bottom: 3px;
 	text-align: center;
 }
-#signin button[type="submit"]:hover{
+#signin button:hover{
 	color: rgb(0, 126, 165);
 	text-shadow: 0 0 10px rgb(0, 126, 165);
 	cursor: pointer;
 }
-#signin button[type="submit"]:before {
+#signin button:before {
     content: "\27A4";
 }
 #signin p {

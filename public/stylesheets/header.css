@@ -1,4 +1,4 @@
-.header-nav {
+.header-nav, .exitButton {
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -38,16 +38,19 @@
     align-items: center;
     width:40%;
 }
-.header-menu-gather, .header-menu-home, .header-menu-instructions, .header-logo {
+.header-menu-gather, .header-menu-home, .header-menu-instructions, .header-logo, .exitButton {
     transition-property: "background-color";
     transition-property: "border-bottom";
     transition-duration: .4s;
 }
-.header-menu-gather:hover, .header-menu-home:hover, .header-menu-instructions:hover, .header-logo:hover {
+.header-menu-gather:hover, .header-menu-home:hover, .header-menu-instructions:hover, .header-logo:hover, .exitButton:hover {
     background-color: #4e5258;
     border-bottom: 1px solid rgb(218, 210, 210);
     cursor: pointer;
     border-radius: 5px;
+}
+.exitButton {
+    margin-right: 3vw;
 }
 .hr-line-top {
     margin: 10px;
