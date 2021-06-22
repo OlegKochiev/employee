@@ -13,8 +13,6 @@ router.route('/auth')
         });
     })
     .post(jsonParser, async (req, res, next) => {
-        console.log("req.body = ")
-        console.log(req.body)
         const usernameVerify = await User.checkUserName(req.body.username);
         const passwordVerify = await User.checkUserPassword(req.body.password);
         if (usernameVerify && passwordVerify) {
@@ -28,7 +26,6 @@ router.route('/auth')
         } else {
             res.redirect('/auth');
         }
-        //res.sendStatus(200);
     })
     .delete((req, res) => {
         res.clearCookie('authorization')
